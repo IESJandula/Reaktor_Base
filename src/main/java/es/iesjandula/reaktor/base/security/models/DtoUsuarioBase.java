@@ -1,7 +1,5 @@
 package es.iesjandula.reaktor.base.security.models;
 
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,17 +10,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class DtoUsuario
+public class DtoUsuarioBase
 {
-	/** Atributo - email */
+	/** Atributo - Email */
 	private String email ;
 	
-	/** Atributo - nombre */
+	/** Atributo - Nombre */
 	private String nombre ;
 	
-	/** Atributo - apellidos */
+	/** Atributo - Apellidos */
 	private String apellidos ;
-	
-	/** Atributo - roles */
-	private List<String> roles ;
 }
