@@ -15,4 +15,19 @@
 	<name>Base</name>
 	<description>Utilidades Base para clientes y servidores Reaktor</description>
 
+	<dependencies>
+		<!-- Dependencia de Apache HttpClient para hacer peticiones al servidor -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.14</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
 </project>
