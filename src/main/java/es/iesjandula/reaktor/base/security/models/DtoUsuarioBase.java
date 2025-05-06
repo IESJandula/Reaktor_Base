@@ -20,4 +20,7 @@ public class DtoUsuarioBase
 	
 	/** Atributo - Apellidos */
 	private String apellidos ;
+
+	/** Atributo - Departamento */
+	private String departamento ;
 }
