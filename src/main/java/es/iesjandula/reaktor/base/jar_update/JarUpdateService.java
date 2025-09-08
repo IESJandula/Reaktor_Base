@@ -8,7 +8,10 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import jakarta.annotation.PostConstruct;
-import lombok.extern.slf4j.Slf4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * @author Francisco Manuel Benítez Chico
@@ -16,9 +19,13 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Configuration
 @EnableScheduling
-@Slf4j
 public class JarUpdateService
 {
+    /**
+     * Logger of the class
+     */
+    private static final Logger log = LoggerFactory.getLogger(JarUpdateService.class);
+
 	/** Atributo - Ruta absoluta al JAR */
 	private String rutaAbsolutaAlJar ;
 	
