@@ -65,11 +65,14 @@ public class BaseConstants
 	
 	/** Role - Cliente proyector */
 	public static final String ROLE_CLIENTE_PROYECTOR = "CLIENTE_PROYECTOR" ;
+
+	/** Role - Aplicacion notificaciones */
+	public static final String ROLE_APLICACION_NOTIFICACIONES = "APLICACION_NOTIFICACIONES" ;
 	
 	/** Lista de roles permitidos para usuarios web */
 	public static final List<String> ROLES_USUARIOS_LIST = Arrays.asList(new String[] { ROLE_ADMINISTRADOR,
 																						ROLE_PROFESOR,
 																						ROLE_DIRECCION }) ;
 	/** Lista de roles permitidos para aplicaciones */
-	public static final List<String> ROLES_APPS_LIST     = Arrays.asList(new String[] { ROLE_CLIENTE_IMPRESORA, ROLE_CLIENTE_PROYECTOR }) ;
+	public static final List<String> ROLES_APPS_LIST     = Arrays.asList(new String[] { ROLE_CLIENTE_IMPRESORA, ROLE_CLIENTE_PROYECTOR, ROLE_APLICACION_NOTIFICACIONES }) ;
 }
