@@ -19,6 +19,9 @@ public class DtoUsuarioBase
 	/** Atributo - Departamento */
 	private String departamento ;
 
+	/** Atributo - Fecha de cumpleaños */
+	private String fechaNacimiento ;
+
 	/**
 	 * Constructor por defecto
 	 */
@@ -29,17 +32,19 @@ public class DtoUsuarioBase
 	
 	/**
 	 * Constructor con parámetros
-	 * @param email
-	 * @param nombre
-	 * @param apellidos
-	 * @param departamento
+	 * @param email correo electrónico del usuario
+	 * @param nombre nombre del usuario
+	 * @param apellidos apellidos del usuario
+	 * @param departamento departamento del usuario
+	 * @param fechaNacimiento fecha de cumpleaños del usuario
 	 */
-	public DtoUsuarioBase(String email, String nombre, String apellidos, String departamento)
+	public DtoUsuarioBase(String email, String nombre, String apellidos, String departamento, String fechaNacimiento)
 	{
-		this.email = email;
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.departamento = departamento;
+		this.email           = email;
+		this.nombre          = nombre;
+		this.apellidos       = apellidos;
+		this.departamento    = departamento;
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	/**
@@ -79,6 +84,15 @@ public class DtoUsuarioBase
 	}
 
 	/**
+	 * Getter para el atributo fecha de cumpleaños
+	 * @return la fecha de cumpleaños del usuario
+	 */
+	public String getFechaNacimiento()
+	{
+		return this.fechaNacimiento;
+	}
+
+	/**
 	 * Setter para el atributo email
 	 * @param email el email del usuario
 	 */
@@ -112,6 +126,15 @@ public class DtoUsuarioBase
 	public void setDepartamento(String departamento)
 	{
 		this.departamento = departamento;
+	}
+
+	/**
+	 * Setter para el atributo fecha de cumpleaños
+	 * @param fechaNacimiento la fecha de cumpleaños del usuario
+	 */
+	public void setFechaNacimiento(String fechaNacimiento)
+	{
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	/**

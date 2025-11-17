@@ -22,10 +22,16 @@ public class BaseConstants
 	
 	/** Error - Error mientras se obtenía la clave pública */
 	public static final int ERR_GETTING_PUBLIC_KEY	 	 		= 2 ;
+
+	/** Error - Error al convertir la fecha */
+	public static final int ERR_CONVERTING_DATE 	 		    = 3 ;
+
+	/** Error - Error al convertir la hora */
+	public static final int ERR_CONVERTING_TIME 	 		    = 4 ;
 	
 	
 	/*********************************************************/
-	/********************* Colecciones ***********************/
+	/********************* JWT Usuarios **********************/
 	/*********************************************************/
 	
 	/** JWT Attribute - Usuarios - Email */
@@ -37,8 +43,18 @@ public class BaseConstants
 	/** JWT Attribute - Usuarios - Apellidos */
 	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_APELLIDOS = "apellidos" ;
 	
+	/** JWT Attribute - Usuarios - Departamento */
+	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_DEPARTAMENTO = "departamento" ;
+	
+	/** JWT Attribute - Usuarios - Fecha de cumpleaños */
+	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_FECHA_NACIMIENTO = "fechaNacimiento" ;
+	
 	/** JWT Attribute - Usuarios - Roles */
 	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_ROLES 	  = "roles" ;
+
+	/*********************************************************/
+	/********************* JWT Aplicaciones ******************/
+	/*********************************************************/
 	
 	/** JWT Attribute - Aplicaciones - Nombre */
 	public static final String JWT_ATTR_APLICACIONES_ATTRIBUTE_NOMBRE = "nombre" ;
@@ -75,4 +91,14 @@ public class BaseConstants
 																						ROLE_DIRECCION }) ;
 	/** Lista de roles permitidos para aplicaciones */
 	public static final List<String> ROLES_APPS_LIST     = Arrays.asList(new String[] { ROLE_CLIENTE_IMPRESORA, ROLE_CLIENTE_PROYECTOR, ROLE_APLICACION_NOTIFICACIONES }) ;
+
+	/*********************************************************/
+	/******************* Formatos de fechas *****************/
+	/*********************************************************/
+
+	/** Formato de fecha - dd/MM/yyyy */
+	public static final String FORMATO_FECHA_DD_MM_YYYY = "dd/MM/yyyy" ;
+
+	/** Formato de hora - HH:mm */
+	public static final String FORMATO_HORA_HH_MM       = "HH:mm" ;
 }
