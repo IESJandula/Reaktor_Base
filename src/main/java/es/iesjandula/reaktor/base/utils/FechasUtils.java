@@ -8,11 +8,19 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Date;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
+/**
+ * Clase auxiliar para la gestión de fechas
+ */
 public class FechasUtils
 {
+	/**
+	 * Logger of the class
+	 */
+	private static final Logger log = LoggerFactory.getLogger(FechasUtils.class);
+
 	/**
 	 * Método auxiliar para convertir una fecha a Date
 	 * @param fecha Fecha
