@@ -7,9 +7,6 @@ import java.util.List;
  */
 public class DtoUsuarioExtended extends DtoUsuarioBase
 {
-	/** Atributo - roles */
-	private List<String> roles ;
-	
 	/** Atributo - JWT */
 	private String jwt ;
 
@@ -33,18 +30,9 @@ public class DtoUsuarioExtended extends DtoUsuarioBase
 	 */
 	public DtoUsuarioExtended(String email, String nombre, String apellidos, String departamento, String fechaNacimiento, List<String> roles, String jwt)
 	{
-		super(email, nombre, apellidos, departamento, fechaNacimiento);
-		this.roles = roles;
-		this.jwt = jwt;
-	}
+		super(email, nombre, apellidos, departamento, fechaNacimiento, roles);
 
-	/**
-	 * Getter para el atributo roles
-	 * @return los roles del usuario
-	 */
-	public List<String> getRoles()
-	{
-		return this.roles;
+		this.jwt = jwt;
 	}
 	
 	/**
@@ -54,15 +42,6 @@ public class DtoUsuarioExtended extends DtoUsuarioBase
 	public String getJwt()
 	{
 		return this.jwt;
-	}
-
-	/**
-	 * Setter para el atributo roles
-	 * @param roles los roles del usuario
-	 */
-	public void setRoles(List<String> roles)
-	{
-		this.roles = roles;
 	}
 
 	/**

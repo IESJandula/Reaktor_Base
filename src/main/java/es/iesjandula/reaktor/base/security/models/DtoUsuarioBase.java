@@ -1,5 +1,6 @@
 package es.iesjandula.reaktor.base.security.models;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -22,6 +23,9 @@ public class DtoUsuarioBase
 	/** Atributo - Fecha de cumpleaños */
 	private String fechaNacimiento ;
 
+	/** Atributo - roles */
+	private List<String> roles ;
+
 	/**
 	 * Constructor por defecto
 	 */
@@ -37,14 +41,16 @@ public class DtoUsuarioBase
 	 * @param apellidos apellidos del usuario
 	 * @param departamento departamento del usuario
 	 * @param fechaNacimiento fecha de cumpleaños del usuario
+	 * @param roles roles del usuario
 	 */
-	public DtoUsuarioBase(String email, String nombre, String apellidos, String departamento, String fechaNacimiento)
+	public DtoUsuarioBase(String email, String nombre, String apellidos, String departamento, String fechaNacimiento, List<String> roles)
 	{
 		this.email           = email;
 		this.nombre          = nombre;
 		this.apellidos       = apellidos;
 		this.departamento    = departamento;
 		this.fechaNacimiento = fechaNacimiento;
+		this.roles           = roles;
 	}
 
 	/**
@@ -93,6 +99,15 @@ public class DtoUsuarioBase
 	}
 
 	/**
+	 * Getter para el atributo roles
+	 * @return los roles del usuario
+	 */
+	public List<String> getRoles()
+	{
+		return this.roles;
+	}
+
+	/**
 	 * Setter para el atributo email
 	 * @param email el email del usuario
 	 */
@@ -135,6 +150,15 @@ public class DtoUsuarioBase
 	public void setFechaNacimiento(String fechaNacimiento)
 	{
 		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	/**
+	 * Setter para el atributo roles
+	 * @param roles los roles del usuario
+	 */
+	public void setRoles(List<String> roles)
+	{
+		this.roles = roles;
 	}
 
 	/**
