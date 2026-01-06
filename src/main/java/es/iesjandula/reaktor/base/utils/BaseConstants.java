@@ -8,6 +8,10 @@ import java.util.List;
  */
 public class BaseConstants
 {
+
+	/** String - Coma */
+	public static final String STRING_COMA = "," ;
+
 	/*********************************************************/
 	/*********************** Errores *************************/
 	/*********************************************************/

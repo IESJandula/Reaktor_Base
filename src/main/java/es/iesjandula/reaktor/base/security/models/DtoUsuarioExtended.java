@@ -28,7 +28,7 @@ public class DtoUsuarioExtended extends DtoUsuarioBase
 	 * @param roles roles del usuario
 	 * @param jwt jwt del usuario
 	 */
-	public DtoUsuarioExtended(String email, String nombre, String apellidos, String departamento, String fechaNacimiento, List<String> roles, String jwt)
+	public DtoUsuarioExtended(String email, String nombre, String apellidos, String departamento, String fechaNacimiento, String roles, String jwt)
 	{
 		super(email, nombre, apellidos, departamento, fechaNacimiento, roles);
 

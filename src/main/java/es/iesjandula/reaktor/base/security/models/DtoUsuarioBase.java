@@ -1,7 +1,10 @@
 package es.iesjandula.reaktor.base.security.models;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+
+import es.iesjandula.reaktor.base.utils.BaseConstants;
 
 /**
  * @author Francisco Manuel Benítez Chico
@@ -43,14 +46,18 @@ public class DtoUsuarioBase
 	 * @param fechaNacimiento fecha de cumpleaños del usuario
 	 * @param roles roles del usuario
 	 */
-	public DtoUsuarioBase(String email, String nombre, String apellidos, String departamento, String fechaNacimiento, List<String> roles)
+	public DtoUsuarioBase(String email, String nombre, String apellidos, String departamento, String fechaNacimiento, String roles)
 	{
 		this.email           = email;
 		this.nombre          = nombre;
 		this.apellidos       = apellidos;
 		this.departamento    = departamento;
 		this.fechaNacimiento = fechaNacimiento;
-		this.roles           = roles;
+
+		if (roles != null && !roles.isEmpty())
+		{
+			this.roles = Arrays.asList(roles.split(BaseConstants.STRING_COMA));
+		}
 	}
 
 	/**
