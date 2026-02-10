@@ -86,6 +86,9 @@ public class BaseConstants
 	/** Role - Cliente proyector */
 	public static final String ROLE_CLIENTE_PROYECTOR = "CLIENTE_PROYECTOR" ;
 
+	/** Role - Cliente puerta */
+	public static final String ROLE_CLIENTE_PUERTA = "CLIENTE_PUERTA" ;
+
 	/** Role - Aplicacion notificaciones */
 	public static final String ROLE_APLICACION_NOTIFICACIONES = "APLICACION_NOTIFICACIONES" ;
 
@@ -96,11 +99,10 @@ public class BaseConstants
 	public static final String ROLE_APLICACION_SCHOOL_BASE    = "APLICACION_SCHOOL_BASE" ;
 	
 	/** Lista de roles permitidos para usuarios web */
-	public static final List<String> ROLES_USUARIOS_LIST = Arrays.asList(new String[] { ROLE_ADMINISTRADOR,
-																						ROLE_PROFESOR,
-																						ROLE_DIRECCION }) ;
+	public static final List<String> ROLES_USUARIOS_LIST = Arrays.asList(new String[] { ROLE_ADMINISTRADOR, ROLE_PROFESOR, ROLE_DIRECCION }) ;
+
 	/** Lista de roles permitidos para aplicaciones */
-	public static final List<String> ROLES_APPS_LIST     = Arrays.asList(new String[] { ROLE_CLIENTE_IMPRESORA, ROLE_CLIENTE_PROYECTOR, ROLE_APLICACION_NOTIFICACIONES, ROLE_APLICACION_IMPRESORA, ROLE_APLICACION_SCHOOL_BASE }) ;
+	public static final List<String> ROLES_APPS_LIST     = Arrays.asList(new String[] { ROLE_CLIENTE_IMPRESORA, ROLE_CLIENTE_PROYECTOR, ROLE_CLIENTE_PUERTA, ROLE_APLICACION_NOTIFICACIONES, ROLE_APLICACION_IMPRESORA, ROLE_APLICACION_SCHOOL_BASE }) ;
 
 	/*********************************************************/
 	/******************* Formatos de fechas *****************/
