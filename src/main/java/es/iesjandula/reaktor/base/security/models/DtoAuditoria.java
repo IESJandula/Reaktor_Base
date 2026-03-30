@@ -16,6 +16,18 @@ public class DtoAuditoria
 	/** Tipo de principal que genera el evento */
 	private String tipoEventoUsuarioAplicacion ;
 
+	/** Nombre de la aplicación que genera el evento */
+	private String nombreAplicacion;
+
+	/** Email del usuario que genera el evento */
+	private String emailUsuario;
+
+	/** Nombre del usuario que genera el evento */
+	private String nombreUsuario;
+
+	/** Apellidos del usuario que genera el evento */
+	private String apellidosUsuario;
+
 	/** Roles del principal que genera el evento */
 	private List<String> roles = new ArrayList<>();
 
@@ -73,6 +85,76 @@ public class DtoAuditoria
 		this.tipoEventoUsuarioAplicacion = tipoEventoUsuarioAplicacion ;
 	}
 
+	/**
+	 * Obtiene el nombre de la aplicación que genera el evento
+	 * @return Nombre de la aplicación que genera el evento
+	 */
+	public String getNombreAplicacion()
+	{
+		return this.nombreAplicacion;
+	}
+
+	/**
+	 * Establece el nombre de la aplicación que genera el evento
+	 * @param nombreAplicacion Nombre de la aplicación que genera el evento
+	 */
+	public void setNombreAplicacion(String nombreAplicacion)
+	{
+		this.nombreAplicacion = nombreAplicacion;
+	}
+
+	/**
+	 * Obtiene el email del usuario que genera el evento
+	 * @return Email del usuario que genera el evento
+	 */
+	public String getEmailUsuario()
+	{
+		return this.emailUsuario;
+	}
+
+	/**
+	 * Establece el email del usuario que genera el evento
+	 * @param emailUsuario Email del usuario que genera el evento
+	 */
+	public void setEmailUsuario(String emailUsuario)
+	{
+		this.emailUsuario = emailUsuario;
+	}
+
+	/**
+	 * Obtiene el nombre del usuario que genera el evento
+	 * @return Nombre del usuario que genera el evento
+	 */
+	public String getNombreUsuario()
+	{
+		return this.nombreUsuario;
+	}
+
+	/**
+	 * Establece el nombre del usuario que genera el evento
+	 * @param nombreUsuario Nombre del usuario que genera el evento
+	 */
+	public void setNombreUsuario(String nombreUsuario)
+	{
+		this.nombreUsuario = nombreUsuario;
+	}
+	/**
+	 * Obtiene los apellidos del usuario que genera el evento
+	 * @return Apellidos del usuario que genera el evento
+	 */
+	public String getApellidosUsuario()
+	{
+		return this.apellidosUsuario;
+	}
+
+	/**
+	 * Establece los apellidos del usuario que genera el evento
+	 * @param apellidosUsuario Apellidos del usuario que genera el evento
+	 */
+	public void setApellidosUsuario(String apellidosUsuario)
+	{
+		this.apellidosUsuario = apellidosUsuario;
+	}
 	/**
 	 * Obtiene los roles del principal que genera el evento
 	 * @return Roles del principal que genera el evento
