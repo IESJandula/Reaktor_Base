@@ -1,7 +1,5 @@
 package es.iesjandula.reaktor.base.security.models;
 
-import java.util.List;
-
 /**
  * @author Francisco Manuel Benítez Chico
  */

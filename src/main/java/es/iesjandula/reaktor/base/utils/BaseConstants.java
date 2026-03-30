@@ -8,7 +8,6 @@ import java.util.List;
  */
 public class BaseConstants
 {
-
 	/** String - Coma */
 	public static final String STRING_COMA = "," ;
 
@@ -32,7 +31,16 @@ public class BaseConstants
 
 	/** Error - Error al convertir la hora */
 	public static final int ERR_CONVERTING_TIME 	 		    = 4 ;
-	
+
+	/*********************************************************/
+	/********************* Tipos de eventos ******************/
+	/*********************************************************/
+
+	/** Tipo de evento - USUARIO */
+	public static final String STRING_TIPO_EVENTO_USUARIO = "USUARIO";
+
+	/** Tipo de evento - APLICACION */
+	public static final String STRING_TIPO_EVENTO_APLICACION = "APLICACION";
 	
 	/*********************************************************/
 	/********************* JWT Usuarios **********************/
