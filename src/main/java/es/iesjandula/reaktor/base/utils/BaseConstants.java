@@ -100,6 +100,9 @@ public class BaseConstants
 	/** Role - Cliente puerta */
 	public static final String ROLE_CLIENTE_PUERTA            = "CLIENTE_PUERTA" ;
 
+	/** Role - Cliente clonador de imágenes */
+	public static final String ROLE_CLIENTE_CLONADOR_IMAGENES = "CLIENTE_CLONADOR_IMAGENES" ;
+
 	/** Role - Sensor */
 	public static final String ROLE_APLICACION_SENSOR         = "CLIENTE_SENSOR" ;
 
