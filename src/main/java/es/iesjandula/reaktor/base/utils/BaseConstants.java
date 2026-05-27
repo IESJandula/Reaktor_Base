@@ -90,6 +90,9 @@ public class BaseConstants
 
 	/** Role - Friends and Family */
 	public static final String ROLE_FRIENDS_AND_FAMILY 	  	  = "FRIENDS_AND_FAMILY" ;
+
+	/** Role - Departamento Informática */
+	public static final String ROLE_DEPARTAMENTO_INFORMATICA  = "DEPARTAMENTO_INFORMATICA" ;
 	
 	/** Role - Cliente impresora */
 	public static final String ROLE_CLIENTE_IMPRESORA         = "CLIENTE_IMPRESORA" ;
