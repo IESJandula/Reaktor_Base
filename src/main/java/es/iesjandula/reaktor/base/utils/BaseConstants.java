@@ -74,7 +74,6 @@ public class BaseConstants
 	/** JWT Attribute - Aplicaciones - Roles */
 	public static final String JWT_ATTR_APLICACIONES_ATTRIBUTE_ROLES  = "roles" ;
 	
-	
 	/*********************************************************/
 	/************************ Roles **************************/
 	/*********************************************************/
