@@ -122,12 +122,13 @@ public class BaseConstants
 	public static final String ROLE_APLICACION_SCHOOL_BASE    = "APLICACION_SCHOOL_BASE" ;
 	
 	/** Lista de roles permitidos para usuarios web */
-	public static final List<String> ROLES_USUARIOS_LIST      = Arrays.asList(new String[] { ROLE_ADMINISTRADOR, ROLE_PROFESOR, ROLE_DIRECCION, ROLE_FRIENDS_AND_FAMILY }) ;
+	public static final List<String> ROLES_USUARIOS_LIST      = Arrays.asList(new String[] { ROLE_ADMINISTRADOR, ROLE_PROFESOR, ROLE_DIRECCION, ROLE_FRIENDS_AND_FAMILY, ROLE_DEPARTAMENTO_INFORMATICA }) ;
 
 	/** Lista de roles permitidos para aplicaciones */
 	public static final List<String> ROLES_APPS_LIST          = Arrays.asList(new String[] { ROLE_CLIENTE_IMPRESORA, ROLE_CLIENTE_PROYECTOR, ROLE_CLIENTE_PUERTA, 
 		 			                                                                         ROLE_APLICACION_SENSOR, ROLE_APLICACION_ACTUADOR, 
-																							 ROLE_APLICACION_NOTIFICACIONES, ROLE_APLICACION_IMPRESORA, ROLE_APLICACION_SCHOOL_BASE }) ;
+																							 ROLE_APLICACION_NOTIFICACIONES, ROLE_APLICACION_IMPRESORA, ROLE_APLICACION_SCHOOL_BASE,
+																							 ROLE_CLIENTE_CLONADOR_IMAGENES }) ;
 
 	/*********************************************************/
 	/******************* Formatos de fechas *****************/
