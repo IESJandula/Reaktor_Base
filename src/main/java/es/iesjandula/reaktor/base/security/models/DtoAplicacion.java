@@ -10,6 +10,9 @@ public class DtoAplicacion
 	/** Atributo - nombre */
 	private String nombre ;
 	
+	/** Atributo - Curso académico */
+	private String cursoAcademico ;
+	
 	/** Atributo - roles */
 	private List<String> roles ;
 
@@ -24,12 +27,14 @@ public class DtoAplicacion
 	/**
 	 * Constructor con parámetros
 	 * @param nombre
+	 * @param cursoAcademico
 	 * @param roles
 	 */
-	public DtoAplicacion(String nombre, List<String> roles)
+	public DtoAplicacion(String nombre, String cursoAcademico, List<String> roles)
 	{
-		this.nombre = nombre;
-		this.roles  = roles;
+		this.nombre         = nombre;
+		this.cursoAcademico = cursoAcademico;
+		this.roles          = roles;
 	}
 
 	/**
@@ -39,6 +44,15 @@ public class DtoAplicacion
 	public String getNombre()
 	{
 		return nombre;
+	}
+
+	/**
+	 * Getter para el atributo curso académico
+	 * @return el curso académico de la aplicación
+	 */
+	public String getCursoAcademico()
+	{
+		return cursoAcademico;
 	}
 
 	/**
@@ -57,6 +71,15 @@ public class DtoAplicacion
 	public void setNombre(String nombre)
 	{
 		this.nombre = nombre;
+	}
+
+	/**
+	 * Setter para el atributo curso académico
+	 * @param cursoAcademico el curso académico de la aplicación
+	 */
+	public void setCursoAcademico(String cursoAcademico)
+	{
+		this.cursoAcademico = cursoAcademico;
 	}
 
 	/**

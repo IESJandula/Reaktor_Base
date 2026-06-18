@@ -80,4 +80,37 @@ public class FechasUtils
     {
         return hora.format(DateTimeFormatter.ofPattern(BaseConstants.FORMATO_HORA_HH_MM));
     }
+
+	/**
+	 * Método auxiliar para obtener el curso académico actual
+	 * Si el mes está entre el 1 de septiembre del año X y el 31 de agosto del año X+1, el curso académico es el año X-X+1
+	 * @return
+	 */
+	public static String obtenerCursoAcademicoActual()
+	{
+		// Declaramos la variable que contendrá el curso académico actual
+		String cursoAcademicoActual = "";
+
+		// Obtenemos la fecha actual
+		LocalDateTime fechaActual = LocalDateTime.now();
+
+		// Obtenemos el año y el mes actual
+		int anioActual = fechaActual.getYear();
+		int mesActual = fechaActual.getMonthValue();
+
+		// Si el mes es mayor o igual a septiembre ...
+		if (mesActual >= 9)
+		{
+			// ... el curso académico es el año actual y el año siguiente
+			cursoAcademicoActual = anioActual + "/" + (anioActual + 1);
+		}
+		else
+		{
+			// en otro caso, el curso académico es el año anterior y el actual
+			cursoAcademicoActual = (anioActual - 1) + "/" + anioActual;
+		}
+
+		// Devolvemos el curso académico actual
+		return cursoAcademicoActual;
+	}
 }

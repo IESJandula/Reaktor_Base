@@ -13,6 +13,9 @@ public class DtoUsuarioBase
 {
 	/** Atributo - Email */
 	private String email ;
+
+	/** Atributo - Curso académico (formato YYYY-YYYY) */
+	private String cursoAcademico ;
 	
 	/** Atributo - Nombre */
 	private String nombre ;
@@ -38,7 +41,7 @@ public class DtoUsuarioBase
 	}
 	
 	/**
-	 * Constructor con parámetros
+	 * Constructor con parámetros (sin curso académico, retrocompatible)
 	 * @param email correo electrónico del usuario
 	 * @param nombre nombre del usuario
 	 * @param apellidos apellidos del usuario
@@ -48,11 +51,27 @@ public class DtoUsuarioBase
 	 */
 	public DtoUsuarioBase(String email, String nombre, String apellidos, String departamento, String fechaNacimiento, String roles)
 	{
+		this(email, nombre, apellidos, departamento, fechaNacimiento, roles, null);
+	}
+
+	/**
+	 * Constructor con parámetros (incluye el curso académico)
+	 * @param email correo electrónico del usuario
+	 * @param nombre nombre del usuario
+	 * @param apellidos apellidos del usuario
+	 * @param departamento departamento del usuario
+	 * @param fechaNacimiento fecha de cumpleaños del usuario
+	 * @param roles roles del usuario
+	 * @param cursoAcademico curso académico del usuario
+	 */
+	public DtoUsuarioBase(String email, String nombre, String apellidos, String departamento, String fechaNacimiento, String roles, String cursoAcademico)
+	{
 		this.email           = email;
 		this.nombre          = nombre;
 		this.apellidos       = apellidos;
 		this.departamento    = departamento;
 		this.fechaNacimiento = fechaNacimiento;
+		this.cursoAcademico  = cursoAcademico;
 
 		if (roles != null && !roles.isEmpty())
 		{
@@ -69,6 +88,14 @@ public class DtoUsuarioBase
 		return this.email;
 	}
 
+	/**
+	 * Getter para el atributo curso académico
+	 * @return el curso académico del usuario
+	 */
+	public String getCursoAcademico()
+	{
+		return this.cursoAcademico;
+	}
 	/**
 	 * Getter para el atributo nombre
 	 * @return el nombre del usuario
@@ -121,6 +148,15 @@ public class DtoUsuarioBase
 	public void setEmail(String email)
 	{
 		this.email = email;
+	}
+
+	/**
+	 * Setter para el atributo curso académico
+	 * @param cursoAcademico el curso académico del usuario
+	 */
+	public void setCursoAcademico(String cursoAcademico)
+	{
+		this.cursoAcademico = cursoAcademico;
 	}
 
 	/**
@@ -189,7 +225,7 @@ public class DtoUsuarioBase
 		}
 		
 		DtoUsuarioBase other = (DtoUsuarioBase) obj;
-		return Objects.equals(email, other.email) && Objects.equals(nombre, other.nombre) && Objects.equals(apellidos, other.apellidos) && Objects.equals(departamento, other.departamento);
+		return Objects.equals(email, other.email) && Objects.equals(cursoAcademico, other.cursoAcademico) && Objects.equals(nombre, other.nombre) && Objects.equals(apellidos, other.apellidos) && Objects.equals(departamento, other.departamento);
 	}
 
 	/**
@@ -198,6 +234,6 @@ public class DtoUsuarioBase
 	 */
 	public int hashCode()
 	{
-		return Objects.hash(email, nombre, apellidos, departamento);
+		return Objects.hash(email, cursoAcademico, nombre, apellidos, departamento);
 	}
 }
