@@ -47,32 +47,38 @@ public class BaseConstants
 	/*********************************************************/
 	
 	/** JWT Attribute - Usuarios - Email */
-	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_EMAIL     = "email" ;
+	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_EMAIL            = "email" ;
+
+	/** JWT Attribute - Usuarios - Curso Académico */
+	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_CURSO_ACADEMICO  = "cursoAcademico" ;
 	
 	/** JWT Attribute - Usuarios - Nombre */
-	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_NOMBRE    = "nombre" ;
+	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_NOMBRE           = "nombre" ;
 	
 	/** JWT Attribute - Usuarios - Apellidos */
-	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_APELLIDOS = "apellidos" ;
+	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_APELLIDOS        = "apellidos" ;
 	
 	/** JWT Attribute - Usuarios - Departamento */
-	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_DEPARTAMENTO = "departamento" ;
+	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_DEPARTAMENTO     = "departamento" ;
 	
 	/** JWT Attribute - Usuarios - Fecha de cumpleaños */
 	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_FECHA_NACIMIENTO = "fechaNacimiento" ;
 	
 	/** JWT Attribute - Usuarios - Roles */
-	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_ROLES 	  = "roles" ;
+	public static final String JWT_ATTR_USUARIOS_ATTRIBUTE_ROLES 	        = "roles" ;
 
 	/*********************************************************/
 	/********************* JWT Aplicaciones ******************/
 	/*********************************************************/
 	
 	/** JWT Attribute - Aplicaciones - Nombre */
-	public static final String JWT_ATTR_APLICACIONES_ATTRIBUTE_NOMBRE = "nombre" ;
+	public static final String JWT_ATTR_APLICACIONES_ATTRIBUTE_NOMBRE          = "nombre" ;
+
+	/** JWT Attribute - Aplicaciones - Curso Académico */
+	public static final String JWT_ATTR_APLICACIONES_ATTRIBUTE_CURSO_ACADEMICO = "cursoAcademico" ;
 	
 	/** JWT Attribute - Aplicaciones - Roles */
-	public static final String JWT_ATTR_APLICACIONES_ATTRIBUTE_ROLES  = "roles" ;
+	public static final String JWT_ATTR_APLICACIONES_ATTRIBUTE_ROLES           = "roles" ;
 	
 	/*********************************************************/
 	/************************ Roles **************************/
