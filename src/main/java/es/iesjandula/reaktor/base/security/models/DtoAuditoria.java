@@ -16,6 +16,9 @@ public class DtoAuditoria
 	/** Tipo de principal que genera el evento */
 	private String tipoEventoUsuarioAplicacion ;
 
+	/** Curso académico del usuario que genera el evento */
+	private String cursoAcademicoUsuario;
+
 	/** Nombre de la aplicación que genera el evento */
 	private String nombreAplicacion;
 
@@ -85,6 +88,23 @@ public class DtoAuditoria
 		this.tipoEventoUsuarioAplicacion = tipoEventoUsuarioAplicacion ;
 	}
 
+	/**
+	 * Obtiene el curso académico del usuario que genera el evento
+	 * @return Curso académico del usuario que genera el evento
+	 */
+	public String getCursoAcademicoUsuario()
+	{
+		return this.cursoAcademicoUsuario;
+	}
+
+	/**
+	 * Establece el curso académico del usuario que genera el evento
+	 * @param cursoAcademicoUsuario Curso académico del usuario que genera el evento
+	 */
+	public void setCursoAcademicoUsuario(String cursoAcademicoUsuario)
+	{
+		this.cursoAcademicoUsuario = cursoAcademicoUsuario;
+	}
 	/**
 	 * Obtiene el nombre de la aplicación que genera el evento
 	 * @return Nombre de la aplicación que genera el evento

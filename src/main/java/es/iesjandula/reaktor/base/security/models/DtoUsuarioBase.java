@@ -39,39 +39,25 @@ public class DtoUsuarioBase
 	{
 		// Vacío
 	}
-	
-	/**
-	 * Constructor con parámetros (sin curso académico, retrocompatible)
-	 * @param email correo electrónico del usuario
-	 * @param nombre nombre del usuario
-	 * @param apellidos apellidos del usuario
-	 * @param departamento departamento del usuario
-	 * @param fechaNacimiento fecha de cumpleaños del usuario
-	 * @param roles roles del usuario
-	 */
-	public DtoUsuarioBase(String email, String nombre, String apellidos, String departamento, String fechaNacimiento, String roles)
-	{
-		this(email, nombre, apellidos, departamento, fechaNacimiento, roles, null);
-	}
 
 	/**
 	 * Constructor con parámetros (incluye el curso académico)
 	 * @param email correo electrónico del usuario
+	 * @param cursoAcademico curso académico del usuario
 	 * @param nombre nombre del usuario
 	 * @param apellidos apellidos del usuario
 	 * @param departamento departamento del usuario
 	 * @param fechaNacimiento fecha de cumpleaños del usuario
 	 * @param roles roles del usuario
-	 * @param cursoAcademico curso académico del usuario
 	 */
-	public DtoUsuarioBase(String email, String nombre, String apellidos, String departamento, String fechaNacimiento, String roles, String cursoAcademico)
+	public DtoUsuarioBase(String email, String cursoAcademico, String nombre, String apellidos, String departamento, String fechaNacimiento, String roles)
 	{
 		this.email           = email;
+		this.cursoAcademico  = cursoAcademico;
 		this.nombre          = nombre;
 		this.apellidos       = apellidos;
 		this.departamento    = departamento;
 		this.fechaNacimiento = fechaNacimiento;
-		this.cursoAcademico  = cursoAcademico;
 
 		if (roles != null && !roles.isEmpty())
 		{
