@@ -19,6 +19,7 @@ public class DtoUsuarioExtended extends DtoUsuarioBase
 	/**
 	 * Constructor con parámetros
 	 * @param email correo electrónico del usuario
+	 * @param cursoAcademico curso académico del usuario
 	 * @param nombre nombre del usuario
 	 * @param apellidos apellidos del usuario
 	 * @param departamento departamento del usuario
@@ -26,9 +27,9 @@ public class DtoUsuarioExtended extends DtoUsuarioBase
 	 * @param roles roles del usuario
 	 * @param jwt jwt del usuario
 	 */
-	public DtoUsuarioExtended(String email, String nombre, String apellidos, String departamento, String fechaNacimiento, String roles, String jwt)
+	public DtoUsuarioExtended(String email, String cursoAcademico, String nombre, String apellidos, String departamento, String fechaNacimiento, String roles, String jwt)
 	{
-		super(email, nombre, apellidos, departamento, fechaNacimiento, roles);
+		super(email, cursoAcademico, nombre, apellidos, departamento, fechaNacimiento, roles);
 
 		this.jwt = jwt;
 	}
