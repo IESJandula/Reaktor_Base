@@ -100,8 +100,6 @@ jobs:
 
       - name: Compilar y publicar Base en Nexus
         run: |
-          rm -rf "$HOME/.m2/repository/es/iesjandula/reaktor/Dependencies"
-
           mvn --batch-mode --no-transfer-progress -U \
             --settings "$RUNNER_TEMP/maven/settings.xml" \
             clean deploy
