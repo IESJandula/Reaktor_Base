@@ -61,9 +61,9 @@ jobs:
           </settings>
           EOF
 
-      - name: Compilar, ejecutar tests y publicar en Nexus
+      - name: Compilar y publicar Base en Nexus
         run: |
-          mvn --batch-mode --no-transfer-progress \
+          mvn --batch-mode --no-transfer-progress -U \
             --settings "$RUNNER_TEMP/maven/settings.xml" \
             clean deploy
 
