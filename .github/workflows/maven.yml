@@ -35,46 +35,68 @@ jobs:
           cat > "$RUNNER_TEMP/maven/settings.xml" <<'EOF'
           <settings>
             <servers>
-              <!-- Para publicar la librería -->
+              <!-- Publicar en maven-releases / maven-snapshots -->
               <server>
                 <id>nexus-deploy</id>
                 <username>${env.NEXUS_PUBLISH_USERNAME}</username>
                 <password>${env.NEXUS_PUBLISH_PASSWORD}</password>
               </server>
 
-              <!-- Para descargar Spring, Firebase y demás dependencias -->
+              <!-- Repositorio directo, necesario para SNAPSHOT -->
               <server>
                 <id>nexus-public</id>
                 <username>${env.NEXUS_PUBLISH_USERNAME}</username>
                 <password>${env.NEXUS_PUBLISH_PASSWORD}</password>
               </server>
+
+              <!-- Mirror para Central y cualquier otro repositorio -->
+              <server>
+                <id>nexus-mirror</id>
+                <username>${env.NEXUS_PUBLISH_USERNAME}</username>
+                <password>${env.NEXUS_PUBLISH_PASSWORD}</password>
+              </server>
             </servers>
+
+            <profiles>
+              <profile>
+                <id>reaktor-nexus</id>
+
+                <repositories>
+                  <repository>
+                    <id>nexus-public</id>
+                    <name>Nexus Maven Public</name>
+                    <url>https://nexus.iesjandula.es/repository/maven-public/</url>
+
+                    <releases>
+                      <enabled>true</enabled>
+                    </releases>
+
+                    <snapshots>
+                      <enabled>true</enabled>
+                      <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                  </repository>
+                </repositories>
+              </profile>
+            </profiles>
+
+            <activeProfiles>
+              <activeProfile>reaktor-nexus</activeProfile>
+            </activeProfiles>
 
             <mirrors>
               <mirror>
-                <id>nexus-public</id>
-                <name>Nexus Maven Public</name>
+                <id>nexus-mirror</id>
+                <name>Nexus para repositorios externos</name>
                 <url>https://nexus.iesjandula.es/repository/maven-public/</url>
-                <mirrorOf>*</mirrorOf>
+
+                <!-- Todo pasa por Nexus, salvo el repositorio directo
+                     que acabamos de declarar para snapshots -->
+                <mirrorOf>*,!nexus-public</mirrorOf>
               </mirror>
             </mirrors>
           </settings>
           EOF
-
-      - name: Verificar acceso al parent en Nexus
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          URL="https://nexus.iesjandula.es/repository/maven-public/es/iesjandula/reaktor/Dependencies/2.0.0-SNAPSHOT/maven-metadata.xml"
-
-          curl --fail --silent --show-error \
-            --user "${NEXUS_PUBLISH_USERNAME}:${NEXUS_PUBLISH_PASSWORD}" \
-            "$URL" \
-            -o "$RUNNER_TEMP/dependencies-metadata.xml"
-
-          echo "Metadatos descargados correctamente:"
-          cat "$RUNNER_TEMP/dependencies-metadata.xml"
 
       - name: Compilar y publicar Base en Nexus
         run: |
