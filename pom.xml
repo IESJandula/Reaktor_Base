@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>es.iesjandula.reaktor</groupId>
 		<artifactId>Dependencies</artifactId>
-		<version>1.0.0</version>
+		<version>2.0.0-SNAPSHOT</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 

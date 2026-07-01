@@ -1,25 +1,72 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
-
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: Java CI with Maven
+name: Publicar librería en Nexus
 
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  build:
-    runs-on: self-hosted
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build with Maven
-      run: mvn clean install
+  publish:
+    runs-on: ubuntu-latest
 
-    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-    - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+    env:
+      NEXUS_PUBLISH_USERNAME: ${{ secrets.NEXUS_PUBLISH_USERNAME }}
+      NEXUS_PUBLISH_PASSWORD: ${{ secrets.NEXUS_PUBLISH_PASSWORD }}
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Instalar Java 17 y cache Maven
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - name: Crear settings.xml temporal
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/maven"
+
+          cat > "$RUNNER_TEMP/maven/settings.xml" <<'EOF'
+          <settings>
+            <servers>
+              <!-- Para publicar la librería -->
+              <server>
+                <id>nexus-deploy</id>
+                <username>${env.NEXUS_PUBLISH_USERNAME}</username>
+                <password>${env.NEXUS_PUBLISH_PASSWORD}</password>
+              </server>
+
+              <!-- Para descargar Spring, Firebase y demás dependencias -->
+              <server>
+                <id>nexus-public</id>
+                <username>${env.NEXUS_PUBLISH_USERNAME}</username>
+                <password>${env.NEXUS_PUBLISH_PASSWORD}</password>
+              </server>
+            </servers>
+
+            <mirrors>
+              <mirror>
+                <id>nexus-public</id>
+                <name>Nexus Maven Public</name>
+                <url>https://nexus.iesjandula.es/repository/maven-public/</url>
+                <mirrorOf>*</mirrorOf>
+              </mirror>
+            </mirrors>
+          </settings>
+          EOF
+
+      - name: Compilar, ejecutar tests y publicar en Nexus
+        run: |
+          mvn --batch-mode --no-transfer-progress \
+            --settings "$RUNNER_TEMP/maven/settings.xml" \
+            clean deploy
+
+      - name: Borrar settings temporal
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/maven"

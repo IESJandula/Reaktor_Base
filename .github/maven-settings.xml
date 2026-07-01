@@ -1,0 +1,24 @@
+<settings>
+    <servers>
+        <server>
+            <id>nexus-deploy</id>
+            <username>${env.NEXUS_PUBLISH_USERNAME}</username>
+            <password>${env.NEXUS_PUBLISH_PASSWORD}</password>
+        </server>
+
+        <server>
+            <id>nexus-public</id>
+            <username>${env.NEXUS_PUBLISH_USERNAME}</username>
+            <password>${env.NEXUS_PUBLISH_PASSWORD}</password>
+        </server>
+    </servers>
+
+    <mirrors>
+        <mirror>
+            <id>nexus-public</id>
+            <name>Nexus Maven Public</name>
+            <url>https://nexus.iesjandula.es/repository/maven-public/</url>
+            <mirrorOf>*</mirrorOf>
+        </mirror>
+    </mirrors>
+</settings>
