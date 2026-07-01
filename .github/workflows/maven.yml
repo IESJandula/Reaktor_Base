@@ -61,6 +61,21 @@ jobs:
           </settings>
           EOF
 
+      - name: Verificar acceso al parent en Nexus
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          URL="https://nexus.iesjandula.es/repository/maven-public/es/iesjandula/reaktor/Dependencies/2.0.0-SNAPSHOT/maven-metadata.xml"
+
+          curl --fail --silent --show-error \
+            --user "${NEXUS_PUBLISH_USERNAME}:${NEXUS_PUBLISH_PASSWORD}" \
+            "$URL" \
+            -o "$RUNNER_TEMP/dependencies-metadata.xml"
+
+          echo "Metadatos descargados correctamente:"
+          cat "$RUNNER_TEMP/dependencies-metadata.xml"
+
       - name: Compilar y publicar Base en Nexus
         run: |
           mvn --batch-mode --no-transfer-progress -U \
